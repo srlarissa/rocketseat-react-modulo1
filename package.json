@@ -1,0 +1,8 @@
+{
+  "name": "Modulo 1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/srlarissa/rocketseat-react-modulo1.git",
+  "author": "Larissa Soares Reis <larissasoaresreis@gmail.com>",
+  "license": "MIT"
+}
