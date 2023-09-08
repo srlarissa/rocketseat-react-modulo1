@@ -1,12 +1,16 @@
 import { HeaderContainer } from "./styles";
+import {  Timer, Scroll } from 'phosphor-react';
+import { NavLink } from 'react-router-dom';
+
+import logoIgnite from '../../assets/Logo.svg';
 
 export function Header() {
   return(
     <HeaderContainer>
-      <span>Logo</span>
+      <img src={logoIgnite} />
       <nav>
-        <a href="#">Timer</a>
-        <a href="#">History</a>
+        <NavLink to="/" title="Timer"><Timer size={24} /></NavLink>
+        <NavLink to="/history" title="Histórico"><Scroll size={24} /></NavLink>
       </nav>
     </HeaderContainer>
   )
