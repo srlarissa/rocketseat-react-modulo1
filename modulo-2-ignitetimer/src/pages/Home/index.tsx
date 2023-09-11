@@ -30,7 +30,7 @@ interface Cycle {
 }
 
 export function Home() {
-  const [] = useState();
+  const [cycles, setCycles] = useState<Cycle[]>([]);
 
   const { register, handleSubmit, watch, reset } = useForm<NewCycleFormData>({
     resolver: zodResolver(newCycleFormValidationSchema),
@@ -41,7 +41,14 @@ export function Home() {
   })
 
   function handleCreateNewCycle(data: NewCycleFormData) {
-    console.log(data)
+    const newCycle: Cycle = {
+      id: String(new Date().getTime()),
+      task: data.task,
+      minutesAmount: data.minutesAmount,
+    }
+
+    setCycles((state) => [...state, newCycle])
+
     reset()
   }
 
