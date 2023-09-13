@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form'
 import { useEffect, useState } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
+import { NewCycleForm } from './NewCycleForm'
+import { CountDown } from './CountDown'
 import { differenceInSeconds } from 'date-fns'
 import {
   CountDownContainer,
@@ -14,7 +16,6 @@ import {
   StopCountDownButton,
   TaskInput,
 } from './styles'
-import { NewCycleForm } from './NewCycleForm'
 
 const newCycleFormValidationSchema = zod.object({
   task: zod.string().min(1, 'Informe a tarefa'),
@@ -136,7 +137,7 @@ export function Home() {
       <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
         
         <NewCycleForm />
-
+        <CountDown />
         {activeCycle ? (
           <StopCountDownButton onClick={handleInterruptCycle} type="button">
             <HandPalm size={24} />
